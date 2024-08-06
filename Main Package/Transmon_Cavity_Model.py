@@ -458,10 +458,13 @@ def TrackStates(states, debug = False, extra_sorts=None, states_to_track = [], s
 
     return to_return
 
-def Floquet_0_Sweep(model, list_of_drive_args, options = None):
+def Floquet_0_Sweep(model, list_of_drive_args, options = None, debug = False):
     floquet_modes = []
     floquet_modes_energies = []
-    for drive_args in list_of_drive_args:
+    for i in range(len(list_of_drive_args)):
+        drive_args = list_of_drive_args[i]
+        if debug: print(f'Doing args {i+1}/{len(list_of_drive_args)}\n args: {drive_args}')
+
         H_d_floq = model.Drive_Hamiltonian(drive_args, floquet = True)
 
         if 'shift' not in drive_args:
@@ -817,19 +820,21 @@ def Plot_State_Evolution_Two_Modes(model, psi_list, x_axis = None, x_ticks = Non
         cbar.ax.set_yticklabels(photon_numbers)
         plt.show()
 
-def FindResonanceFloquet(model, state_i, state_f, freq_d, shifts, epsilon, show_plot = False, fig_args = {}, debug = False, options = None, jump_thresh = 10):
+def FindResonanceFloquet(model, state_i, state_f, freq_d, shifts, epsilon, show_plot = False, fig_args = {}, debug = False, options = None, jump_thresh = 10, save_plot = False, save_path = None):
 
     list_of_drive_args = []
     for shift in shifts:
         list_of_drive_args.append(dict(freq_d = freq_d, shift = shift, epsilon = epsilon))
 
-    floq_res = Floquet_0_Sweep(model, list_of_drive_args, options = options)
-
+    if debug: print('Doing Floquet Sweep\n------------------------------------------------------')
+    floq_res = Floquet_0_Sweep(model, list_of_drive_args, options = options, debug = debug)
+    if debug: print("------------------------------------------------------\nFloquet Sweep Done")
     states_to_track_names = [state_i, state_f]
     states_to_track = [model.get_dressed_state(state_i), model.get_dressed_state(state_f)]
 
+    if debug: print(f'Doing State Tracking\n  (This does not have any updates, it just takes a while)')
     tracking_res = TrackStates(floq_res['modes'], extra_sorts = floq_res['energies'], states_to_track = states_to_track, states_to_track_keys = states_to_track_names)
-    
+    if debug: print(f'State Tracking Done! Doing the next bit')
     x = np.copy(shifts)
     ys = np.zeros((tracking_res['tracked_state_locs'].shape[0], len(x)))
     for pair in itert.product(np.arange(tracking_res['tracked_state_locs'].shape[0]), np.arange(tracking_res['tracked_state_locs'].shape[1])):
@@ -912,7 +917,14 @@ def FindResonanceFloquet(model, state_i, state_f, freq_d, shifts, epsilon, show_
         ax1.set_xlabel(r'Frequency Shift [GHz]')
         ax1.set_ylabel(r'$\frac{1}{\pi}\omega_Q$ [GHz]')
         ax1.set_title(r'$\text{Fitting Stark Shift: }\epsilon = EPS$ [GHz]'.replace('EPS', str(epsilon)))
+        
+        if save_plot:
+            if save_path == None:
+                save_path = model.save_path
+            fig.savefig(save_path+'FloquetResonanceSweep_'+GET_TIME()+'.pdf')
+
         plt.show()
+
 
     return min_dat
 
@@ -1286,7 +1298,7 @@ class Transmon_Cavity_Model:
         if len(self.N_Cavity) == 2:
             Plot_State_Evolution_Two_Modes(self, psi_list = psi_list, **fig_kwargs)
 
-    def GetStarkShift(self, state1, state2, epsilon, fit_name = None, use_fit = True, make_fit = False, kwargs = {}, save_new_fit = True):
+    def GetStarkShift(self, state1, state2, epsilon, fit_name = None, use_fit = True, make_fit = False, kwargs = {}, save_new_fit = True, freq_d = None):
         if fit_name == None:
             fit_name = f'{state1[0]}{state1[1]}{state2[0]}{state2[1]}'
 
@@ -1305,7 +1317,8 @@ class Transmon_Cavity_Model:
             print('No fit exits for this pulse, please calibrate or generate a fit')
             return None
 
-        freq_d = self.DefaultFrequency(state1, state2)
+        if freq_d == None:
+            freq_d = self.DefaultFrequency(state1, state2)
         if not make_fit:
             return FindResonanceFloquet(self, state1, state2, freq_d, epsilon = epsilon, **kwargs)
         
