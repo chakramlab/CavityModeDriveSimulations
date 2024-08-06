@@ -1,30 +1,9 @@
 /local/gr400/Git Repositories/CavityModeDriveSimulations/Main Package/
-SyntaxWarning: "is" with a literal. Did you mean "=="?
- /local/gr400/Git Repositories/CavityModeDriveSimulations/Main Package/Transmon_Cavity_Model.py: 1466SyntaxWarning: "is" with a literal. Did you mean "=="?
- /local/gr400/Git Repositories/CavityModeDriveSimulations/Main Package/Transmon_Cavity_Model.py: 1470SyntaxWarning: "is not" with a literal. Did you mean "!="?
- /local/gr400/Git Repositories/CavityModeDriveSimulations/Main Package/Transmon_Cavity_Model.py: 1474SyntaxWarning: "is not" with a literal. Did you mean "!="?
- /local/gr400/Git Repositories/CavityModeDriveSimulations/Main Package/Transmon_Cavity_Model.py: 1479Got Model
+Got Model
 Default Frequency: 0.24626148692377825
 Doing Floquet Sweep
 ------------------------------------------------------
-Doing args 1/4
- args: {'freq_d': 0.24626148692377825, 'shift': 0.01, 'epsilon': 0.5}
-Doing args 2/4
- args: {'freq_d': 0.24626148692377825, 'shift': 0.023333333333333334, 'epsilon': 0.5}
-Doing args 3/4
- args: {'freq_d': 0.24626148692377825, 'shift': 0.03666666666666667, 'epsilon': 0.5}
-Doing args 4/4
- args: {'freq_d': 0.24626148692377825, 'shift': 0.05, 'epsilon': 0.5}
-------------------------------------------------------
-Floquet Sweep Done
-Doing State Tracking
-  (This does not have any updates, it just takes a while)
-State Tracking Done! Doing the next bit
-Initial Difs: [0.03999988 0.09333321 0.41918976 0.3925231 ]
-difs[i+1]: 0.09333321089985083, jump_thresh*difs[i]: 0.3999987815582777
-difs[i+1]: 0.41918976356452575, jump_thresh*difs[i]: 0.9333321089985083
-difs[i+1]: 0.39252309755958403, jump_thresh*difs[i]: 4.191897635645257
-Final Difs: [0.03999988 0.09333321 0.41918976 0.3925231 ]
-Fit Guesses: [0.01, 0.03999987815582777, 14.219620702826175]
-stark shift: 0.010130864611464695
-Initial Drive Time: 28.277861030851476
+Doing args 1/11
+ args: {'freq_d': 0.24626148692377825, 'shift': 0.04, 'epsilon': 1}
+Doing args 2/11
+ args: {'freq_d': 0.24626148692377825, 'shift': 0.044, 'epsilon': 1}
