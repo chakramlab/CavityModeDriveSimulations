@@ -19,3 +19,7 @@ Doing args 7/11
  args: {'freq_d': 0.24626148692377825, 'shift': 0.064, 'epsilon': 1}
 Doing args 8/11
  args: {'freq_d': 0.24626148692377825, 'shift': 0.068, 'epsilon': 1}
+Doing args 9/11
+ args: {'freq_d': 0.24626148692377825, 'shift': 0.07200000000000001, 'epsilon': 1}
+Doing args 10/11
+ args: {'freq_d': 0.24626148692377825, 'shift': 0.07600000000000001, 'epsilon': 1}

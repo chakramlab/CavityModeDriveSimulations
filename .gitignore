@@ -3,3 +3,4 @@
 *.jpg
 *.pyx
 *.out
+*.pyc
