@@ -1,5 +1,5 @@
-.pdf
-.png
-.jpg
-.pyx
-.out
+*.pdf
+*.png
+*.jpg
+*.pyx
+*.out
