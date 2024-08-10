@@ -955,18 +955,29 @@ def GetCollapseAndDephasing(model, T_Kappa_C = 1/(50*1000), T_Kappa_D = 1/(192.5
     Transmon_Dephasing = 0
     Cavity_Collapse = 0
     
-    for pair in itert.product(np.arange(model.transmon_truncated_dim-1), np.arange(model.resonator_truncated_dim)):
-        j = pair[0]
-        n = pair[1]
-        Transmon_Collapse += np.sqrt(T_Kappa_C)*np.sqrt(j+1)*model.get_dressed_state([j,n])*model.get_dressed_state([j+1, n]).dag()
-        Transmon_Dephasing += np.sqrt(T_Kappa_D)*np.sqrt(j)*model.get_dressed_state([j, n])*model.get_dressed_state([j, n]).dag()
-    
-    for pair in itert.product(np.arange(model.transmon_truncated_dim), np.arange(model.resonator_truncated_dim-1)):
-        j = pair[0]
-        n = pair[1]
-        Cavity_Collapse += np.sqrt(C_Kappa_C)*np.sqrt(n+1)*model.get_dressed_state([j, n])*model.get_dressed_state([j, n+1]).dag()
+    res_dims = []
+    for dim in model.resonator_truncated_dim:
+        res_dims.append(np.arange(dim))
+
+    for coord_tuple in itert.product(np.arange(model.transmon_truncated_dim), *res_dims):
+        coord = list(coord_tuple)
+        Transmon_Dephasing += np.sqrt(T_Kappa_D)*np.sqrt(coord[0])*model.get_dressed_state(coord)*model.get_dressed_state(coord).dag()
+
+        if coord[0]<(model.transmon_truncated_dim-1):
+            next_coord = copy.copy(coord)
+            next_coord[0] = next_coord[0]+1
+            Transmon_Collapse += np.sqrt(T_Kappa_C)*np.sqrt(next_coord[0])*model.get_dressed_state(coord)*model.get_dressed_state(next_coord).dag()
+            
+        
+        for i in range(len(coord)-1):
+            # offset because the 0 index is transomn 
+            if coord[i+1]<(model.resonator_truncated_dim[i]-1):
+                next_coord = copy.copy(coord)
+                next_coord[i+1] = next_coord[i+1]+1
+                Cavity_Collapse += np.sqrt(C_Kappa_C)*np.sqrt(next_coord[i+1])*model.get_dressed_state(coord)*model.get_dressed_state(next_coord).dag()
     
     return dict(T_C = Transmon_Collapse, T_D = Transmon_Dephasing, C_C = Cavity_Collapse)
+
 
 class Transmon_Cavity_Model:
 

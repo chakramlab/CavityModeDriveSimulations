@@ -39,24 +39,21 @@ import inspect
 
 from datetime import datetime
 
-if sys.platform == 'linux':
-    path_to_package = str(pathlib.Path(os.getcwd()).parents[0])+'/Custom_Packages/'
-    print(path_to_package)
-    sys.path.insert(0,path_to_package)
+path_to_package = str(pathlib.Path(os.getcwd()).parents[0])+'/Main Package/'
+print(path_to_package)
+sys.path.insert(0,path_to_package)
 
-# if sys.platform == 'darwin':
-#     sys.path.insert(0,'/Users/gavinrockwood/Documents/Research/Bosonic_Error_Correction/Custom_Packages/')
-
+main_path = str(pathlib.Path(os.getcwd()).parents[0])+'/'
 
 import importlib
 
-import Transmon_Cavity_ModelV4_N_Modes as TCM
+import Transmon_Cavity_Model as TCM
 
 
 
-model_name = 'Main_Mode_3_And_5'
-save_path = 'ModelSaves/'+model_name
-save_path = save_path + '/'
+model_name = 'Mode_3_And_5'
+save_path = 'Model Saves/'+model_name
+save_path = main_path+save_path + '/'
 
 Mode35 = TCM.LoadModel(save_path+model_name+'.json')
 
