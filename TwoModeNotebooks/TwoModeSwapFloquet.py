@@ -80,7 +80,7 @@ print(f'Default Frequency: {default_freq_SWAP_g10}')
 
 Odeoptions = {'nsteps': 10000, 'max_step':1, 'atol':1e-6, 'rtol':1e-6}#, 'method':'bdf'}
 solver_ops = qp.Options(**Odeoptions)
-kwargs = {'shifts':np.linspace(0.04, 0.08, 11), 'show_plot':True, 'options': solver_ops, 'save_plot':True, 'debug':True, 'save_path':save_path+'Figs/' }
+kwargs = {'shifts':np.linspace(0.05, 0.055, 11)[1:-4], 'show_plot':True, 'options': solver_ops, 'save_plot':True, 'debug':True, 'save_path':save_path+'Figs/' }
 
 
 epsilon =  1
