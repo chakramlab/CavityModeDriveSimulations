@@ -5,4 +5,4 @@
 *.out
 *.pyc
 *__pycache__/
-*Data/
+Data/*
