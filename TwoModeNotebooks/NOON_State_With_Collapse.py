@@ -70,8 +70,8 @@ C_and_D_Ops = TCM.GetCollapseAndDephasing(Mode35)
 #    C_and_D_Ops = pickle.load(file)
 c_ops = list(C_and_D_Ops.values())
 print(f'Got c_ops')
-Odeoptions = {'nsteps': 1000000, 'max_step':None, 'atol':1e-6, 'rtol':1e-6}
-res = Mode35.Run_Pulse_Sequence(psi0, ops, spps = 10, Odeoptions = Odeoptions, c_ops=c_ops)
+Odeoptions = {'nsteps': 10000, 'max_step':None, 'atol':1e-6, 'rtol':1e-6}
+res = Mode35.Run_Pulse_Sequence(psi0, ops, spps = 1, Odeoptions = Odeoptions, c_ops=c_ops)
 
 
 with open("Data/Noon_State_n_1.pkl", 'wb') as file:
