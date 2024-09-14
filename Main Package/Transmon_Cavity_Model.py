@@ -197,7 +197,7 @@ def Calibrate_Ramped_Pulse(model, state1, state2, args, t0, tf, steps, op_name, 
     
     if save_pulse: model.op_drive_params_dict[op_name] = copy.deepcopy(args)
 
-def Calibrate_Guassian_Pulse(model, state1, state2, args, t0, tf, steps, op_name, drive_state_kwargs = {}, make_plot = False, debug = False, save_pulse = True):
+def Calibrate_Guassian_Pulse(model, state1, state2, args, t0, tf, steps, op_name, drive_state_kwargs = {}, make_plot = False, debug = False, save_pulse = True, sigma_factor = 2):
     if type(state1[0])==str:
             state1[0] = model.Transmon_Labels_LK[state1[0]]
         
@@ -212,6 +212,8 @@ def Calibrate_Guassian_Pulse(model, state1, state2, args, t0, tf, steps, op_name
 
     if 'freq_d' not in args:
         args['freq_d'] = model.DefaultFrequency(state1, state2)
+    if 'Envelope' not in args:
+        args['Envelope'] = "Guassian"
 
 
     final_prob_list = []
@@ -221,7 +223,7 @@ def Calibrate_Guassian_Pulse(model, state1, state2, args, t0, tf, steps, op_name
         t = t_array[i]
         print(f'Doing step {i+1}/{len(t_array)}, t = {t}')
         args['pulse_time'] = t
-        args['Envelope Args'] = {'sigma': t/4, 'mu':t/2}
+        args['Envelope Args'] = {'sigma': t/(2*sigma_factor), 'mu':t/2}
 
         
 
@@ -845,7 +847,13 @@ def FindResonanceFloquet(model, state_i, state_f, freq_d, shifts, epsilon, show_
         ys[pair] = tracking_res['extra_sorts'][x_step, matched_state_idx]/(np.pi)
         
 
-    difs = np.abs(ys[1]-ys[0]) 
+    difs1 = np.abs(ys[1]-ys[0]) 
+    difs2 = 2*np.abs(x+freq_d)-difs1
+    difs = []
+    for i in range(len(difs1)):
+        difs.append(min(difs1[i], difs2[i]))
+    difs = np.array(difs)
+
     if debug: print(f'Initial Difs: {difs}')
     for i in range(len(difs)-1):
         if debug: print(f'difs[i+1]: {difs[i+1]}, jump_thresh*difs[i]: {jump_thresh*difs[i]}')
@@ -961,12 +969,12 @@ def GetCollapseAndDephasing(model, T_Kappa_C = 1/(50*1000), T_Kappa_D = 1/(192.5
 
     for coord_tuple in itert.product(np.arange(model.transmon_truncated_dim), *res_dims):
         coord = list(coord_tuple)
-        Transmon_Dephasing += np.sqrt(T_Kappa_D)*np.sqrt(coord[0])*model.get_dressed_state(coord)*model.get_dressed_state(coord).dag()
+        Transmon_Dephasing += np.sqrt(T_Kappa_D)*coord[0]*model.get_dressed_state(coord)*model.get_dressed_state(coord).dag()
 
         if coord[0]<(model.transmon_truncated_dim-1):
             next_coord = copy.copy(coord)
             next_coord[0] = next_coord[0]+1
-            Transmon_Collapse += np.sqrt(T_Kappa_C)*np.sqrt(next_coord[0])*model.get_dressed_state(coord)*model.get_dressed_state(next_coord).dag()
+            Transmon_Collapse += np.sqrt(T_Kappa_C)*(next_coord[0])*model.get_dressed_state(coord)*model.get_dressed_state(next_coord).dag()
             
         
         for i in range(len(coord)-1):
@@ -974,7 +982,7 @@ def GetCollapseAndDephasing(model, T_Kappa_C = 1/(50*1000), T_Kappa_D = 1/(192.5
             if coord[i+1]<(model.resonator_truncated_dim[i]-1):
                 next_coord = copy.copy(coord)
                 next_coord[i+1] = next_coord[i+1]+1
-                Cavity_Collapse += np.sqrt(C_Kappa_C)*np.sqrt(next_coord[i+1])*model.get_dressed_state(coord)*model.get_dressed_state(next_coord).dag()
+                Cavity_Collapse += np.sqrt(C_Kappa_C)*(next_coord[i+1])*model.get_dressed_state(coord)*model.get_dressed_state(next_coord).dag()
     
     return dict(T_C = Transmon_Collapse, T_D = Transmon_Dephasing, C_C = Cavity_Collapse)
 
@@ -1086,7 +1094,6 @@ class Transmon_Cavity_Model:
         j = self.hilbertspace.dressed_index((tuple(ind)))
         return self.hilbertspace.eigensys(self.hilbertspace.dimension)[1][j]
     
-
     def DefaultFrequency(self, state1, state2):
         if type(state1[0]) == str:
             state1[0] = self.Transmon_Labels_LK[state1[0]]
@@ -1167,7 +1174,7 @@ class Transmon_Cavity_Model:
 
         return H_d
     
-    def Drive_State(self,psi0, args, spps = 100, starttime = 0, t_list = None, Odeoptions = None, progress_bar = True,c_ops = None, identity = False, envelope = None, H_d = None):
+    def Drive_State(self,psi0, args, spps = 10, starttime = 0, t_list = None, Odeoptions = None, progress_bar = True,c_ops = None, identity = False, envelope = None, H_d = None):
 
         if Odeoptions == None:
             Odeoptions = {}
@@ -1236,7 +1243,13 @@ class Transmon_Cavity_Model:
                 pickle.dump(res, file)
         return res
     
-    def Plot_State_Evolution(self, t_list, psi_list, fig_kwargs = {}, debug = False, timestamps = [], plot_every = 1):
+    def Plot_State_Evolution(self, t_list, psi_list, fig_kwargs = None, debug = False, timestamps = None, plot_every = 1):
+        if fig_kwargs is None:
+            fig_kwargs = {}
+        if timestamps is None:
+            timestamps = []
+
+            
         t_list = copy.deepcopy(t_list)
         psi_list = copy.deepcopy(psi_list)
         if len(timestamps)>0:
@@ -1309,7 +1322,7 @@ class Transmon_Cavity_Model:
         if len(self.N_Cavity) == 2:
             Plot_State_Evolution_Two_Modes(self, psi_list = psi_list, **fig_kwargs)
 
-    def GetStarkShift(self, state1, state2, epsilon, fit_name = None, use_fit = True, make_fit = False, kwargs = {}, save_new_fit = True, freq_d = None):
+    def GetStarkShift(self, state1, state2, epsilon, fit_name = None, use_fit = False, make_fit = False, kwargs = {}, save_new_fit = True, freq_d = None):
         if fit_name == None:
             fit_name = f'{state1[0]}{state1[1]}{state2[0]}{state2[1]}'
 
