@@ -1,0 +1,262 @@
+{
+    "Stuff": {
+        "op_drive_params": {
+            "q_ef_3": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.00358,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999083094060667,
+                "freq_d": 4.495129037778231
+            },
+            "sb_f1g2_2pi_f3g4": {
+                "pulse_time": 978.7534002817528,
+                "Envelope Args": {
+                    "pulse_time": 978.7534002817528,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.10332294178116314,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.0007764089802112296,
+                "accuracy": 0.999999035826265,
+                "freq_d": -2.8697817077804757
+            },
+            "q_ef_2": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.00358,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999082827900596,
+                "freq_d": 4.495299093795769
+            },
+            "sb_f0g1_4pi_f3g4": {
+                "pulse_time": 1608.870722467842,
+                "Envelope Args": {
+                    "pulse_time": 1608.870722467842,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.08858901552290939,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.0005714891107118456,
+                "accuracy": 0.9999539872084513,
+                "freq_d": -2.870147109080321
+            },
+            "q_ge_1/2": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.005,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9995333553978739,
+                "freq_d": 4.603956477039954
+            },
+            "q_ge_2": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.005,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997482920574884,
+                "freq_d": 4.6036634306777025
+            },
+            "sb_f2g3": {
+                "pulse_time": 115.65689642375587,
+                "Envelope Args": {
+                    "pulse_time": 115.65689642375587,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.78,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.042200385158003936,
+                "accuracy": 0.9987289007489273,
+                "freq_d": -2.869416372849102
+            },
+            "sb_half_f1g2": {
+                "pulse_time": 74.345703125,
+                "Envelope Args": {
+                    "pulse_time": 74.345703125,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.78,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.042200385158003936,
+                "accuracy": 0.9999998271134602,
+                "freq_d": -2.8697817077804757
+            },
+            "sb_f1g2": {
+                "pulse_time": 139.91192962139388,
+                "Envelope Args": {
+                    "pulse_time": 139.91192962139388,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.78,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.042200385158003936,
+                "accuracy": 0.999319324173046,
+                "freq_d": -2.8697817077804757
+            },
+            "q_ge_4/3": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.005,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9986565625878363,
+                "freq_d": 4.603793650664721
+            },
+            "q_ge_3": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.005,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997484578544258,
+                "freq_d": 4.6034681212296285
+            },
+            "q_ef_0": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.00358,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.999905353536074,
+                "freq_d": 4.495639281675441
+            },
+            "q_ge_0": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.005,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997444387201422,
+                "freq_d": 4.604054172865094
+            },
+            "q_ge_1": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.005,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997459206912127,
+                "freq_d": 4.603858781214814
+            },
+            "sb_f3g4": {
+                "pulse_time": 101.2761451934429,
+                "Envelope Args": {
+                    "pulse_time": 101.2761451934429,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.78,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.042200385158003936,
+                "accuracy": 0.9981261439745064,
+                "freq_d": -2.8690511042526197
+            },
+            "q_ef_1": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.00358,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999073075982559,
+                "freq_d": 4.49546917509166
+            },
+            "sb_f0g1": {
+                "pulse_time": 194.6616653868858,
+                "Envelope Args": {
+                    "pulse_time": 194.6616653868858,
+                    "ramp_time": 7.5
+                },
+                "epsilon": 0.78,
+                "Envelope": "Sine_Squared_Ramp",
+                "shift": 0.042200385158003936,
+                "accuracy": 0.9998509312046087,
+                "freq_d": -2.870147109080321
+            },
+            "q_ef_3/2": {
+                "pulse_time": 100,
+                "Envelope Args": {
+                    "sigma": 25,
+                    "mu": 50
+                },
+                "epsilon": 0.00358,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9994505450052905,
+                "freq_d": 4.49538412179977
+            }
+        },
+        "Drive_Sequences": {
+            "Binomial_Encoding": [
+                "q_ef_0",
+                "q_ge_0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1",
+                "q_ge_0",
+                "sb_half_f1g2",
+                "q_ge_1",
+                "q_ef_3/2",
+                "sb_f2g3",
+                "q_ge_4/3",
+                "sb_f0g1",
+                "q_ef_3/2",
+                "sb_f0g1_4pi_f3g4",
+                "q_ge_1/2",
+                "sb_f3g4",
+                "q_ef_1",
+                "sb_f1g2_2pi_f3g4"
+            ]
+        }
+    },
+    "Main_Config": {
+        "Nrs": 10,
+        "E_C": 0.10283303447280807,
+        "Cavity_Names": [
+            "Mode 3"
+        ],
+        "E_J": 26.96976142643705,
+        "Nt_cut": 60,
+        "E_oscs": 6.2280871213,
+        "Nt": 10,
+        "ng": 0,
+        "kappa_tc": 2.0e-5,
+        "kappa_td": 5.194805194805194e-6,
+        "kappa_cc": 1.0e-6,
+        "Model_Name": "Mode3",
+        "gs": 0.026184375000000013,
+        "Save_Path": "ModelSaves/Mode3/"
+    }
+}
