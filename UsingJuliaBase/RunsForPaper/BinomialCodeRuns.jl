@@ -21,7 +21,7 @@ println(ARGS)
 models = Dict{Any, Any}("Mode3" => "ModelSaves/Mode3/Mode3.json")
 
 
-Model = SC.Transmon_Resonators_Loader(models[ARGS[1]])
+Model = SC.Circuits.Transmon_Resonators.load(models[ARGS[1]])
 
 @debug "Loaded Model"
 
@@ -38,6 +38,7 @@ end
 
 c_ops = []
 for name in c_op_names
+    @info "Adding $name to C_ops list"
     push!(c_ops, Model.CandD_Ops[name])
 end
 
@@ -50,9 +51,7 @@ start_time = now()
 @info "Op Sequence: $(Model.Stuff["Drive_Sequences"]["Binomial_Encoding"])"
 other_ds_properties = Dict{Any, Any}("CandD_Ops" => string(c_op_names))
 
-
-
-SC.RunPulseSequence(Model, ρ, Model.Stuff["Drive_Sequences"]["Binomial_Encoding"], c_ops = c_ops, run_name = run_name, spns = 0.5, other_ds_properties=other_ds_properties)
+SC.Dynamics.RunPulseSequence(Model, ρ, Model.Stuff["Drive_Sequences"]["Binomial_Encoding"], c_ops = c_ops, run_name = run_name, spns = 0.5, other_ds_properties=other_ds_properties)
 end_time = now()
 
 @info "Total Run Time: "*string(Dates.canonicalize(end_time - start_time))

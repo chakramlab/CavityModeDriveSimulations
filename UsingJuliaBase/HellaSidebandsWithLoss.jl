@@ -21,7 +21,7 @@ function tostr(obj)
 end
 
 
-Mode3 = Mode3 = SC.Transmon_Resonators_Loader("ModelSaves/Mode3/Mode3.json")
+Mode3 = SC.Circuits.Transmon_Resonators.load("ModelSaves/Mode3/Mode3.json")
 
 solver_kwargs = Dict{Any, Any}()#"reltol" => 1e-8, "abstol" => 1e-8, "tol"=>1e-8)
 ψ = Mode3.dressed_states[(2,0)]
@@ -36,7 +36,7 @@ end
 
 @info "With Loss: $with_loss"
 
-SC.RunPulseSequence(Mode3, ρ, fill("sb_f0g1", 400), c_ops = c_ops, run_name = "HellaSidebands"*string(with_loss)*"_"*string(now()), solver_kwargs = solver_kwargs, spns = 0.1)
+SC.Dynamics.RunPulseSequence(Mode3, ρ, fill("sb_f0g1", 1), c_ops = c_ops, run_name = "HellaSidebands"*string(with_loss)*"_"*string(now()), solver_kwargs = solver_kwargs, spns = 5)
 end_time = now()
 
 @info "Total Run Time: "*string(Dates.canonicalize(end_time - start_time))
