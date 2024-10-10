@@ -8,3 +8,5 @@
 *Data/
 *Nohup_Outs/
 *.csv
+*logs/
+*.log
