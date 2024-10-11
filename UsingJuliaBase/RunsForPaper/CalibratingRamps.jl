@@ -29,7 +29,7 @@ Base.redirect_stdio(stdout = log_file, stderr = log_file) do
 
     Mode3 = SC.Circuits.Transmon_Resonators.load("ModelSaves/Mode3/Mode3.json")
 
-    Ramp_Times = [2.5, 5, 7.5, 10, 15, 20, 30, 40, 50, 60]
+    Ramp_Times = vcat(collect(LinRange(0.001, 20-0.001, 100)),collect(LinRange(20, 100, 80)))
     envelopes = ["Sine_Squared_Ramp", "Gaussian_Ramp"]
 
     state1 = (2,0)

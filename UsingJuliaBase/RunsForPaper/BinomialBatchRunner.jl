@@ -40,6 +40,9 @@ global_logger(logger)
 
 Mode3 = SC.Circuits.Transmon_Resonators.load("ModelSaves/Mode3/Mode3.json");
 
+Mode3 = copy(Mode3; name_addon = "ForBinomialBatch")
+SC.Utils.save_model(Mode3)
+
 @info "Time of Run: "*String(Dates.format(t, df))
 
 
@@ -94,7 +97,7 @@ for state in states
     end
     @info "Done submitting jobs for state $state. Waiting for them to finish"
     
-    file_name = the_path*"/logs/counter.txt"
+    file_name = the_path*"/logs/counter.log"
     while true
         num_done = 0
         if isfile(file_name)

@@ -37,7 +37,7 @@ InfoLogger = MiniLogger(io = log_file, minlevel = MiniLoggers.Info)
 global_logger(InfoLogger)
 
 
-models = Dict{Any, Any}("Mode3" => "ModelSaves/Mode3/Mode3.json")
+models = Dict{Any, Any}("Mode3" => "ModelSaves/Mode3_ForBinomialBatch/Mode3_ForBinomialBatch.json")
 
 
 Model = SC.Circuits.Transmon_Resonators.load(models[ARGS[1]])
