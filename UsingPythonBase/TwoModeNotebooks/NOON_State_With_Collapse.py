@@ -69,6 +69,11 @@ C_and_D_Ops = TCM.GetCollapseAndDephasing(Mode35)
 #with open("Data/Mode35_c_ops_save.pkl",  'rb') as file:
 #    C_and_D_Ops = pickle.load(file)
 c_ops = list(C_and_D_Ops.values())
+
+for i in range(len(c_ops)):
+    c_ops[i] = 0*c_ops[i]
+
+    
 print(f'Got c_ops')
 Odeoptions = {'nsteps': 10000, 'max_step':None, 'atol':1e-6, 'rtol':1e-6}
 res = Mode35.Run_Pulse_Sequence(psi0, ops, spps = 1, Odeoptions = Odeoptions, c_ops=c_ops)

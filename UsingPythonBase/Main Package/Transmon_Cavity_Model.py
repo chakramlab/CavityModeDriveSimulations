@@ -987,6 +987,7 @@ def GetCollapseAndDephasing(model, T_Kappa_C = 1/(50*1000), T_Kappa_D = 1/(192.5
     return dict(T_C = Transmon_Collapse, T_D = Transmon_Dephasing, C_C = Cavity_Collapse)
 
 
+
 class Transmon_Cavity_Model:
 
     def __init__(self, E_J=27, E_C=0.11, E_osc=5.75, g=0.028, \
@@ -1055,8 +1056,8 @@ class Transmon_Cavity_Model:
         self.n_zpt =  (E_J/32/E_C)**(1/4.)
 
 
-        self.transmon =  scq.Transmon(EJ = E_J, EC = E_C, ng = transmon_ng,\
-                                       ncut = transmon_ncut, truncated_dim=self.transmon_truncated_dim)
+        self.transmon =  scq.Transmon(EJ = E_J, EC = E_C, ng = self.transmon_ng,\
+                                       ncut = self.transmon_ncut, truncated_dim=self.transmon_truncated_dim)
         
         self.resonators = []
         for i in range(len(E_osc)):
