@@ -48,7 +48,7 @@ Base.redirect_stdio(stdout = log_file, stderr = log_file) do
     for envelope in envelopes
         for rt in Ramp_Times
             t_range = [180, 180+2*rt]
-            for chirp in [true, false]
+            for chirp in [true]#, false]
                 @info "Doing $envelope with rt: $rt, chirp is $chirp"
                 drive_name = "f0g1"
                 if envelope == "Sine_Squared_Ramp"
