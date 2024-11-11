@@ -1,0 +1,268 @@
+{
+    "Stuff": {
+        "op_drive_params": {
+            "q_ef_3": {
+                "pulse_time": 93.125,
+                "Envelope Args": {
+                    "sigma": 23.28125,
+                    "mu": 46.5625
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9998897345449852,
+                "freq_d": 4.495193543961969
+            },
+            "sb_f1g2_2pi_f3g4": {
+                "pulse_time": 944.7058206852298,
+                "Envelope Args": {
+                    "pulse_time": 944.7058206852298,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.0832508987500375,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0007613188025463708,
+                "accuracy": 0.9994816847372432,
+                "freq_d": -3.103826933452936
+            },
+            "q_half_ge0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00269,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9995592887854023,
+                "freq_d": 4.604157839703151
+            },
+            "q_ef_2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.999894309816796,
+                "freq_d": 4.495373189709648
+            },
+            "q_ge_2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997121991900696,
+                "freq_d": 4.603731917049006
+            },
+            "q_ge_1/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9992802928707105,
+                "freq_d": 4.604051344573281
+            },
+            "sb_f2g3": {
+                "pulse_time": 123.58857328502748,
+                "Envelope Args": {
+                    "pulse_time": 123.58857328502748,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.595,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.037204608786014504,
+                "accuracy": 0.99761317623863,
+                "freq_d": -3.1034344398297264
+            },
+            "sb_f0g1_4pi_f3g4": {
+                "pulse_time": 1481.8325947459164,
+                "Envelope Args": {
+                    "pulse_time": 1481.8325947459164,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.07647962954143757,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0006433530530826274,
+                "accuracy": 0.999820378239168,
+                "freq_d": -3.104219517377743
+            },
+            "sb_half_f1g2": {
+                "pulse_time": 80.52958567766636,
+                "Envelope Args": {
+                    "pulse_time": 80.52958567766636,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.595,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.037204608786014504,
+                "accuracy": 0.9999944573234062,
+                "freq_d": -3.103826933452936
+            },
+            "sb_f1g2": {
+                "pulse_time": 148.67000432799944,
+                "Envelope Args": {
+                    "pulse_time": 148.67000432799944,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.595,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.037204608786014504,
+                "accuracy": 0.9985331109420307,
+                "freq_d": -3.103826933452936
+            },
+            "q_ge_4/3": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.99839210014049,
+                "freq_d": 4.603873852690164
+            },
+            "q_ge_3": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997129696135645,
+                "freq_d": 4.603519042477617
+            },
+            "q_ef_0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997948331908223,
+                "freq_d": 4.49573257863795
+            },
+            "q_ge_0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9993570891078042,
+                "freq_d": 4.604157839703151
+            },
+            "q_ge_1": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9996765215093331,
+                "freq_d": 4.603944849443411
+            },
+            "sb_f3g4": {
+                "pulse_time": 108.6370659350076,
+                "Envelope Args": {
+                    "pulse_time": 108.6370659350076,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.595,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.037204608786014504,
+                "accuracy": 0.9966900364421121,
+                "freq_d": -3.1030420364523223
+            },
+            "q_ef_1": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9998930618691728,
+                "freq_d": 4.495552867930451
+            },
+            "sb_f0g1": {
+                "pulse_time": 204.92182562001517,
+                "Envelope Args": {
+                    "pulse_time": 204.92182562001517,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.595,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.037204608786014504,
+                "accuracy": 0.9994114023332887,
+                "freq_d": -3.104219517377743
+            },
+            "q_ef_3/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9994496091585543,
+                "freq_d": 4.4954630125767014
+            }
+        }
+    },
+    "Main_Config": {
+        "Nrs": [
+            10
+        ],
+        "E_C": 0.10283303447280807,
+        "Cavity_Names": [
+            "Mode2"
+        ],
+        "E_J": 26.96976142643705,
+        "Nt_cut": 60,
+        "E_oscs": [
+            5.99414475715
+        ],
+        "Nt": 10,
+        "ModelType": "TransmonResonators",
+        "ng": 0,
+        "kappa_tc": 1.785714285714286e-5,
+        "kappa_td": 1.2348024316109425e-5,
+        "kappa_cc": [
+            1.0e-6
+        ],
+        "Model_Name": "Mode2",
+        "gs": [
+            0.023917389967984225
+        ],
+        "Save_Path": "ModelSaves/Mode2/"
+    }
+}
