@@ -28,7 +28,7 @@ end
 
 log_file = the_path*"/logs/BatchRunner.log"
 logger = FormatLogger(open(log_file, "a")) do io, args
-    df = DateFormat("e-u-d-yy:H:M")
+    df = DateFormat("e-u-d-yy.H.M")
     t = now()
     the_time = string(Dates.format(t, df))
     println(io, the_time, ":", "[", args.level, "] ", args.message )
