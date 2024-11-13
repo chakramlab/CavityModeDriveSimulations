@@ -11,7 +11,7 @@ import SuperconductingCavities as SC
 
 # MiniLogger(minlevel = MiniLoggers.Info) |> global_logger
 
-df = DateFormat("e-u-d-yy:H:M")
+df = DateFormat("e-u-d-yy.H.M")
 t = now()
 
 the_time = string(Dates.format(t, df))

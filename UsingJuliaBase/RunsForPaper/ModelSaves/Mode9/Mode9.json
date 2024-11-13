@@ -87,6 +87,30 @@
                 "accuracy": 0.9998527808093283,
                 "freq_d": -1.382959564248253
             },
+            "q_half_ef0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.001925,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999844146865021,
+                "freq_d": 4.495603638599043
+            },
+            "q_ef_1/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9998344952954618,
+                "freq_d": 4.49554936777848
+            },
             "q_ge_4/3": {
                 "pulse_time": 92.96875,
                 "Envelope Args": {
@@ -110,6 +134,18 @@
                 "shift": 0,
                 "accuracy": 0.9997130688606094,
                 "freq_d": 4.603779095083785
+            },
+            "q_ge_3/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9991142805532403,
+                "freq_d": 4.603949610235898
             },
             "q_ef_0": {
                 "pulse_time": 92.96875,
@@ -194,9 +230,91 @@
                 "epsilon": 0.00385,
                 "Envelope": "Guassian",
                 "shift": 0,
-                "accuracy": 0.9997599378482693,
-                "freq_d": 4.495440826137354
+                "accuracy": 0.9993820029073937,
+                "freq_d": 4.495440832792767
             }
+        },
+        "Drive_Sequences": {
+            "Prep_0_+_2": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "sb_f1g2"
+            ],
+            "Prep_1": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1"
+            ],
+            "Prep_4": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2",
+                "q_ge_2",
+                "q_ef_2",
+                "sb_f2g3",
+                "q_ge_3",
+                "q_ef_3",
+                "sb_f3g4"
+            ],
+            "Prep_0_+_4": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "q_ge_1/2",
+                "sb_f1g2",
+                "q_ge_1",
+                "q_ef_1",
+                "q_ge_1",
+                "sb_f2g3",
+                "q_ge_3/2",
+                "q_ef_3/2",
+                "sb_f3g4"
+            ],
+            "Prep_3": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2",
+                "q_ge_2",
+                "q_ef_2",
+                "sb_f2g3"
+            ],
+            "Prep_0_+_1": [
+                "q_ge_0",
+                "q_half_ef0",
+                "q_ge_0",
+                "sb_f0g1"
+            ],
+            "Prep_2": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2"
+            ],
+            "Prep_0_+_3": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "q_ge_1/2",
+                "sb_f1g2",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f2g3"
+            ]
         }
     },
     "Main_Config": {

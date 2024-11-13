@@ -87,6 +87,30 @@
                 "accuracy": 0.9998605026311763,
                 "freq_d": -1.1310077461865973
             },
+            "q_half_ef0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.001925,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999866591117924,
+                "freq_d": 4.495691882671875
+            },
+            "q_ef_1/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9998487066502111,
+                "freq_d": 4.495644463624349
+            },
             "q_ge_4/3": {
                 "pulse_time": 92.96875,
                 "Envelope Args": {
@@ -110,6 +134,18 @@
                 "shift": 0,
                 "accuracy": 0.9997130886983018,
                 "freq_d": 4.603928395229396
+            },
+            "q_ge_3/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9992638665517997,
+                "freq_d": 4.604076159960634
             },
             "q_ef_0": {
                 "pulse_time": 92.96875,
@@ -194,8 +230,8 @@
                 "epsilon": 0.00385,
                 "Envelope": "Guassian",
                 "shift": 0,
-                "accuracy": 0.9997230543934723,
-                "freq_d": 4.495549625529297
+                "accuracy": 0.9995032167239346,
+                "freq_d": 4.49554962965031
             }
         }
     },

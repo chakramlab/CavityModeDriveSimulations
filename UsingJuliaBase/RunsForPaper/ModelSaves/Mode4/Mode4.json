@@ -50,6 +50,19 @@
                 "accuracy": 0.9998944480534939,
                 "freq_d": 4.495122259613268
             },
+            "sb_f0g1_4pi_f3g4": {
+                "pulse_time": 1601.5559820805472,
+                "Envelope Args": {
+                    "pulse_time": 1601.5559820805472,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.10711566316604423,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0005556383078606569,
+                "accuracy": 0.9977187775387317,
+                "freq_d": -2.6182097339431323
+            },
             "q_ge_2": {
                 "pulse_time": 92.96875,
                 "Envelope Args": {
@@ -87,19 +100,6 @@
                 "accuracy": 0.998414678576089,
                 "freq_d": -2.6174600592029407
             },
-            "sb_f0g1_4pi_f3g4": {
-                "pulse_time": 1601.5559820805472,
-                "Envelope Args": {
-                    "pulse_time": 1601.5559820805472,
-                    "k": 2,
-                    "ramp_time": 11.6257
-                },
-                "epsilon": 0.10711566316604423,
-                "Envelope": "Bump_Ramp",
-                "shift": 0.0005556383078606569,
-                "accuracy": 0.9977187775387317,
-                "freq_d": -2.6182097339431323
-            },
             "sb_f1g2": {
                 "pulse_time": 159.47089959843447,
                 "Envelope Args": {
@@ -112,6 +112,30 @@
                 "shift": 0.0329644387960523,
                 "accuracy": 0.9990656460763326,
                 "freq_d": -2.6178348668117764
+            },
+            "q_half_ef0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.001925,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999446526805836,
+                "freq_d": 4.495475982214259
+            },
+            "q_ef_1/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997268695071712,
+                "freq_d": 4.495387545654864
             },
             "q_ge_4/3": {
                 "pulse_time": 92.96875,
@@ -136,6 +160,18 @@
                 "shift": 0,
                 "accuracy": 0.9997128858008698,
                 "freq_d": 4.603317546492829
+            },
+            "q_ge_3/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9978439174209943,
+                "freq_d": 4.603614631173987
             },
             "q_ef_0": {
                 "pulse_time": 92.96875,
@@ -220,9 +256,91 @@
                 "epsilon": 0.00385,
                 "Envelope": "Guassian",
                 "shift": 0,
-                "accuracy": 0.9994836578572979,
-                "freq_d": 4.495210672536075
+                "accuracy": 0.9985269331399922,
+                "freq_d": 4.495210707986637
             }
+        },
+        "Drive_Sequences": {
+            "Prep_0_+_2": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "sb_f1g2"
+            ],
+            "Prep_1": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1"
+            ],
+            "Prep_4": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2",
+                "q_ge_2",
+                "q_ef_2",
+                "sb_f2g3",
+                "q_ge_3",
+                "q_ef_3",
+                "sb_f3g4"
+            ],
+            "Prep_0_+_4": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "q_ge_1/2",
+                "sb_f1g2",
+                "q_ge_1",
+                "q_ef_1",
+                "q_ge_1",
+                "sb_f2g3",
+                "q_ge_3/2",
+                "q_ef_3/2",
+                "sb_f3g4"
+            ],
+            "Prep_3": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2",
+                "q_ge_2",
+                "q_ef_2",
+                "sb_f2g3"
+            ],
+            "Prep_0_+_1": [
+                "q_ge_0",
+                "q_half_ef0",
+                "q_ge_0",
+                "sb_f0g1"
+            ],
+            "Prep_2": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2"
+            ],
+            "Prep_0_+_3": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "q_ge_1/2",
+                "sb_f1g2",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f2g3"
+            ]
         }
     },
     "Main_Config": {
