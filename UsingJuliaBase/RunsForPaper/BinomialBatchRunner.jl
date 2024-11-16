@@ -11,7 +11,7 @@ import SuperconductingCavities as SC
 
 # MiniLogger(minlevel = MiniLoggers.Info) |> global_logger
 
-df = DateFormat("e-u-d-yy.H.M")
+df = DateFormat("e-u-d-yy_H_M")
 t = now()
 
 the_time = string(Dates.format(t, df))
@@ -28,7 +28,7 @@ end
 
 log_file = the_path*"/logs/BatchRunner.log"
 logger = FormatLogger(open(log_file, "a")) do io, args
-    df = DateFormat("e-u-d-yy.H.M")
+    df = DateFormat("e-u-d-yy_H_M")
     t = now()
     the_time = string(Dates.format(t, df))
     println(io, the_time, ":", "[", args.level, "] ", args.message )
@@ -46,7 +46,7 @@ SC.Utils.save_model(Mode3)
 @info "Time of Run: "*String(Dates.format(t, df))
 
 
-c_d_op_combos = [[], ["Bare Mode 3 Collapse"], ["Bare Transmon Collapse"], ["Bare Transmon Dephasing"], ["Bare Mode 3 Collapse", "Bare Transmon Collapse", "Bare Transmon Dephasing"]]
+c_d_op_combos = [[], ["Mode3 Collapse"], ["Transmon Collapse"], ["Transmon Dephasing"], ["Mode3 Collapse", "Transmon Collapse", "Transmon Dephasing"]]
 
 num_combos = length(c_d_op_combos)
 
@@ -90,7 +90,7 @@ for state in states
 
         if i < num_combos
             min_to_sleep = 5
-            time_to_submit_next = Dates.format(now()+Minute(min_to_sleep), "H:M")
+            time_to_submit_next = Dates.format(now()+Minute(min_to_sleep), "HH:MM")
             @info "Sleeping for $min_to_sleep minutes, submitting next job at $time_to_submit_next"
             sleep(5*60)
         end

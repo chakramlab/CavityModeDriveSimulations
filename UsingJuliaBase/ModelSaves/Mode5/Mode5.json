@@ -14,16 +14,16 @@
                 "freq_d": 4.495000127935466
             },
             "sb_f1g2_2pi_f3g4": {
-                "pulse_time": 1626.7390901234023,
+                "pulse_time": 1122.282315010885,
                 "Envelope Args": {
-                    "pulse_time": 1626.7390901234023,
+                    "pulse_time": 1122.282315010885,
                     "k": 2,
                     "ramp_time": 11.6257
                 },
-                "epsilon": 0.09525777082650055,
+                "epsilon": 0.13574232342776327,
                 "Envelope": "Bump_Ramp",
-                "shift": 0.00030343922137405,
-                "accuracy": 0.9999995257916166,
+                "shift": 0.0006159595823346707,
+                "accuracy": 0.9986758414280411,
                 "freq_d": -2.3768952837581683
             },
             "q_half_ge0": {
@@ -50,6 +50,32 @@
                 "accuracy": 0.9998944824683673,
                 "freq_d": 4.495160596572571
             },
+            "sb_f2g3": {
+                "pulse_time": 118.86275616909442,
+                "Envelope Args": {
+                    "pulse_time": 118.86275616909442,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 1.21,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.04653811211348203,
+                "accuracy": 0.9973625907464644,
+                "freq_d": -2.376558475817933
+            },
+            "sb_f0g1_4pi_f3g4": {
+                "pulse_time": 1755.0099293068945,
+                "Envelope Args": {
+                    "pulse_time": 1755.0099293068945,
+                    "k": 2,
+                    "ramp_time": 11.6257
+                },
+                "epsilon": 0.12396580073844854,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0005142372134883075,
+                "accuracy": 0.9993915105405982,
+                "freq_d": -2.3772321334376585
+            },
             "q_ge_2": {
                 "pulse_time": 92.96875,
                 "Envelope Args": {
@@ -73,32 +99,6 @@
                 "shift": 0,
                 "accuracy": 0.9995001763390534,
                 "freq_d": 4.603849686126479
-            },
-            "sb_f2g3": {
-                "pulse_time": 118.86275616909442,
-                "Envelope Args": {
-                    "pulse_time": 118.86275616909442,
-                    "k": 2,
-                    "ramp_time": 11.6257
-                },
-                "epsilon": 1.21,
-                "Envelope": "Bump_Ramp",
-                "shift": 0.04653811211348203,
-                "accuracy": 0.9973625907464644,
-                "freq_d": -2.376558475817933
-            },
-            "sb_f0g1_4pi_f3g4": {
-                "pulse_time": 2675.0348879402645,
-                "Envelope Args": {
-                    "pulse_time": 2675.0348879402645,
-                    "k": 2,
-                    "ramp_time": 11.6257
-                },
-                "epsilon": 0.08167158636886022,
-                "Envelope": "Bump_Ramp",
-                "shift": 0.00022327431474131236,
-                "accuracy": 0.9999026081233818,
-                "freq_d": -2.3772321334376585
             },
             "sb_half_f1g2": {
                 "pulse_time": 77.74080504115227,
@@ -126,6 +126,30 @@
                 "accuracy": 0.9984747387568402,
                 "freq_d": -2.3768952837581683
             },
+            "q_half_ef0": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.001925,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9999599083490484,
+                "freq_d": 4.495481584895753
+            },
+            "q_ef_1/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00385,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9997587107986747,
+                "freq_d": 4.495401333559972
+            },
             "q_ge_4/3": {
                 "pulse_time": 92.96875,
                 "Envelope Args": {
@@ -149,6 +173,18 @@
                 "shift": 0,
                 "accuracy": 0.9997129310705458,
                 "freq_d": 4.6034086997208385
+            },
+            "q_ge_3/2": {
+                "pulse_time": 92.96875,
+                "Envelope Args": {
+                    "sigma": 23.2421875,
+                    "mu": 46.484375
+                },
+                "epsilon": 0.00538,
+                "Envelope": "Guassian",
+                "shift": 0,
+                "accuracy": 0.9982086286575607,
+                "freq_d": 4.603673298984262
             },
             "q_ef_0": {
                 "pulse_time": 92.96875,
@@ -233,9 +269,111 @@
                 "epsilon": 0.00385,
                 "Envelope": "Guassian",
                 "shift": 0,
-                "accuracy": 0.9994904815105142,
-                "freq_d": 4.4952408308884095
+                "accuracy": 0.9987702590699064,
+                "freq_d": 4.495240856415609
             }
+        },
+        "Drive_Sequences": {
+            "Prep_0_+_2": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "sb_f1g2"
+            ],
+            "Prep_1": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1"
+            ],
+            "Prep_4": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2",
+                "q_ge_2",
+                "q_ef_2",
+                "sb_f2g3",
+                "q_ge_3",
+                "q_ef_3",
+                "sb_f3g4"
+            ],
+            "Binomial_Encoding": [
+                "q_ef_0",
+                "q_ge_0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1",
+                "q_ge_0",
+                "sb_half_f1g2",
+                "q_ge_1",
+                "q_ef_3/2",
+                "sb_f2g3",
+                "q_ge_4/3",
+                "sb_f0g1",
+                "q_ef_3/2",
+                "sb_f0g1_4pi_f3g4",
+                "q_ge_1/2",
+                "sb_f3g4",
+                "q_ef_1",
+                "sb_f1g2_2pi_f3g4"
+            ],
+            "Prep_3": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2",
+                "q_ge_2",
+                "q_ef_2",
+                "sb_f2g3"
+            ],
+            "Prep_0_+_4": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "q_ge_1/2",
+                "sb_f1g2",
+                "q_ge_1",
+                "q_ef_1",
+                "q_ge_1",
+                "sb_f2g3",
+                "q_ge_3/2",
+                "q_ef_3/2",
+                "sb_f3g4"
+            ],
+            "Prep_0_+_1": [
+                "q_ge_0",
+                "q_half_ef0",
+                "q_ge_0",
+                "sb_f0g1"
+            ],
+            "Prep_2": [
+                "q_ge_0",
+                "q_ef_0",
+                "sb_f0g1",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f1g2"
+            ],
+            "Prep_0_+_3": [
+                "q_ge_0",
+                "q_half_ef0",
+                "sb_f0g1",
+                "q_ge_1/2",
+                "q_ef_1/2",
+                "q_ge_1/2",
+                "sb_f1g2",
+                "q_ge_1",
+                "q_ef_1",
+                "sb_f2g3"
+            ]
         }
     },
     "Main_Config": {
