@@ -10,7 +10,7 @@ import SuperconductingCavities as SC
 
 # MiniLogger(minlevel = MiniLoggers.Info) |> global_logger
 
-log_file = "logs/f0g1_fidelities.log"
+log_file = "logs/f0g1_fidelities_upper.log"
 
 log_file = open(log_file, "a")
 InfoLogger = MiniLogger(io = log_file, minlevel = MiniLoggers.Info)
@@ -27,6 +27,12 @@ Base.redirect_stdio(stdout = log_file, stderr = log_file) do
     for i in 1:10
         Model = Models[i]
 
+        for key in keys(Model.Stuff["op_drive_params"])
+            if string(key[1]) == "s"
+                @info "Changing epsilon for $key"
+                Model.Stuff["op_drive_params"][key]["epsilon"]*= (1+1/250)
+            end
+        end
 
         c_ops = collect(values(Model.CandD_Ops))
         ψ = Model.dressed_states[(2,0)]
@@ -37,7 +43,7 @@ Base.redirect_stdio(stdout = log_file, stderr = log_file) do
 
 
         #Base.redirect_stdio(stdout = log_file2, stderr = log_file2) do 
-        SC.Dynamics.RunPulseSequence(Model, ρ, ["sb_f0g1"], c_ops = c_ops, run_name = "f0g1_fidelities_mode_$i", save_path = "Data/", spns = 2, other_ds_properties=other_ds_properties)
+        SC.Dynamics.RunPulseSequence(Model, ρ, ["sb_f0g1"], c_ops = c_ops, run_name = "f0g1_fidelities_mode_$(i)_upper", save_path = "Data/", spns = 2, other_ds_properties=other_ds_properties)
         #end
 
         end_time = now()
