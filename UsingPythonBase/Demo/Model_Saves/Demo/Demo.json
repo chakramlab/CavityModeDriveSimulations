@@ -1,1 +1,0 @@
-{"Main_Config": {"E_J": 27, "E_C": 0.11, "E_osc": 6.2, "g": [0.025], "N_Transmon": 4, "N_Cavity": [5], "transmon_ng": 0, "transmon_ncut": 60, "transmon_truncated_dim": 10, "resonator_truncated_dim": [10], "model_name": "Demo", "save_path": "Model_Saves/Demo/"}, "op_drive_params_dict": {}, "Drive Sequences": {}, "Extra_Stuff": {}}
