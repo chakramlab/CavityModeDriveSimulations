@@ -1,0 +1,39 @@
+{
+    "Stuff": {
+        "op_drive_params": {
+        },
+        "Drive_Sequences": {
+        }
+    },
+    "Main_Config": {
+        "d_t": 1,
+        "Nrs": [
+            10
+        ],
+        "E_C": 0.10283303447280807,
+        "Cavity_Names": [
+            "Resonator"
+        ],
+        "E_J": 26.96976142643705,
+        "Nt_cut": 60,
+        "E_oscs": [
+            7.25
+        ],
+        "Nt": 10,
+        "ModelType": "TransmonResonators",
+        "ng": 0,
+        "kappa_tc": 1.785714285714286e-5,
+        "kappa_td": 1.2348024316109425e-5,
+        "d_r": [
+            0
+        ],
+        "kappa_cc": [
+            1.0e-6
+        ],
+        "Model_Name": "Readout",
+        "gs": [
+            0.0843756103515625
+        ],
+        "Save_Path": "ModelSaves/Readout/"
+    }
+}

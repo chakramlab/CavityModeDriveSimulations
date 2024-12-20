@@ -1,0 +1,37 @@
+{
+    "Stuff": {
+        "op_drive_params": {},
+        "Drive_Sequences": {}
+    },
+    "Main_Config": {
+        "d_t": 0,
+        "Nrs": [
+            30
+        ],
+        "E_C": 0.10283303447280807,
+        "Cavity_Names": [
+            "Mode3"
+        ],
+        "E_J": 26.96976142643705,
+        "Nt_cut": 60,
+        "E_oscs": [
+            6.228083962082612
+        ],
+        "Nt": 5,
+        "ModelType": "TransmonResonators",
+        "ng": 0,
+        "kappa_tc": 1.785714285714286e-5,
+        "kappa_td": 1.2348024316109425e-5,
+        "d_r": [
+            1
+        ],
+        "kappa_cc": [
+            1.0e-6
+        ],
+        "Model_Name": "Mode3Large",
+        "gs": [
+            0.026877206812551357
+        ],
+        "Save_Path": "ModelSaves/Mode3Large/"
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "Stuff": {
+        "op_drive_params": {
+            "fn0gn1_Comb": {
+                "pulse_time": 300,
+                "Envelope Args": {
+                    "pulse_time": 300,
+                    "k": 2,
+                    "ramp_time": 10
+                },
+                "epsilon": [
+                    0.075,
+                    0.075,
+                    0.075,
+                    0.075
+                ],
+                "shift": 0,
+                "Envelope": "Bump_Ramp",
+                "freq_d": [
+                    -2.8341499654760702,
+                    -2.833976599374227,
+                    -2.8338032373579995,
+                    -2.833629884387433
+                ]
+            },
+            "f10g11": {
+                "pulse_time": 315.24062783390275,
+                "Envelope Args": {
+                    "pulse_time": 315.24062783390275,
+                    "k": 2,
+                    "ramp_time": 10
+                },
+                "epsilon": 0.15,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0015388559223461452,
+                "accuracy": 0.9999766214922754,
+                "freq_d": -2.835515455296573
+            },
+            "6_us_wait": {
+                "pulse_time": 6000,
+                "Envelope Args": {
+                },
+                "epsilon": 0,
+                "shift": 0,
+                "Envelope": "Square",
+                "freq_d": 0
+            },
+            "f20g21": {
+                "pulse_time": 315.32289080091084,
+                "Envelope Args": {
+                    "pulse_time": 315.32289080091084,
+                    "k": 2,
+                    "ramp_time": 10
+                },
+                "epsilon": 0.15,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0015384686477508157,
+                "accuracy": 0.9999770798585703,
+                "freq_d": -2.8353417060057504
+            },
+            "fn0gn1_Comb_Long": {
+                "pulse_time": 3000,
+                "Envelope Args": {
+                    "pulse_time": 3000,
+                    "k": 2,
+                    "ramp_time": 10
+                },
+                "epsilon": [
+                    0.075,
+                    0.075,
+                    0.075,
+                    0.075
+                ],
+                "shift": 0,
+                "Envelope": "Bump_Ramp",
+                "freq_d": [
+                    -2.8341499654760702,
+                    -2.833976599374227,
+                    -2.8338032373579995,
+                    -2.833629884387433
+                ]
+            },
+            "f00g01": {
+                "pulse_time": 315.1591170168837,
+                "Envelope Args": {
+                    "pulse_time": 315.1591170168837,
+                    "k": 2,
+                    "ramp_time": 10
+                },
+                "epsilon": 0.15,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.00153924743237828,
+                "accuracy": 0.9998698967760585,
+                "freq_d": -2.8356892129084486
+            },
+            "f30g31": {
+                "pulse_time": 315.40540919421716,
+                "Envelope Args": {
+                    "pulse_time": 315.40540919421716,
+                    "k": 2,
+                    "ramp_time": 10
+                },
+                "epsilon": 0.15,
+                "Envelope": "Bump_Ramp",
+                "shift": 0.0015380833335544833,
+                "accuracy": 0.9999770187359915,
+                "freq_d": -2.835167967720987
+            }
+        }
+    },
+    "Main_Config": {
+        "d_t": 1,
+        "Nrs": [
+            6,
+            4
+        ],
+        "E_C": 0.10283303447280807,
+        "Cavity_Names": [
+            "Mode3",
+            "Readout"
+        ],
+        "E_J": 26.96976142643705,
+        "Nt_cut": 60,
+        "E_oscs": [
+            7.25,
+            6.228083962082612
+        ],
+        "Nt": 8,
+        "ModelType": "TransmonResonators",
+        "ng": 0,
+        "kappa_tc": 1.785714285714286e-5,
+        "kappa_td": 1.2348024316109425e-5,
+        "d_r": [
+            0,
+            0
+        ],
+        "kappa_cc": [
+            1.0e-6,
+            0.0016838912577311483
+        ],
+        "Model_Name": "ReadoutMode3",
+        "gs": [
+            0.026877206812551357,
+            0.0843756103515625
+        ],
+        "Save_Path": "ModelSaves/ReadoutMode3/"
+    }
+}
