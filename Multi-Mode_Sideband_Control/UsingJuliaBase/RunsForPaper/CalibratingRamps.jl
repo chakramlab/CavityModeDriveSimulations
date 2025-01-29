@@ -10,7 +10,7 @@ using YAXArrays
 
 import SuperconductingCavities as SC
 
-df = DateFormat("e-u-d-yy:HH:MM")
+df = DateFormat("e-u-d-yy-HH-MM")
 t = now()
 
 the_time = string(Dates.format(t, df))
